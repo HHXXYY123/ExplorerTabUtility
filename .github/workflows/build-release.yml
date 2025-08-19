@@ -96,29 +96,16 @@ jobs:
           path: inno_src
           depth: 1
 
-      - name: DEBUG - List contents of workspace
-        shell: pwsh
-        run: |
-          Write-Host "--- Listing current directory (D:\a\ExplorerTabUtility\ExplorerTabUtility) ---"
-          Get-ChildItem -Path . -Recurse
-          Write-Host "--- Listing checkout path (D:\a\ExplorerTabUtility\ExplorerTabUtility\inno_src) ---"
-          if (Test-Path -Path '.\inno_src') {
-            Get-ChildItem -Path '.\inno_src' -Recurse
-          } else {
-            Write-Host "'inno_src' directory not found at the expected location."
-          }
-
       - name: Copy Inno Setup Chinese Language File
         shell: pwsh
         run: |
-          $src = ".\inno_src\Files\Languages\ChineseSimplified.isl"
+          $src = ".\inno_src\Files\Languages\Unofficial\ChineseSimplified.isl"
           $destDir = "C:\Program Files (x86)\Inno Setup 6\Languages"
           New-Item -ItemType Directory -Force -Path $destDir
           Copy-Item -Path $src -Destination $destDir -Force
 
       - name: Install Inno Setup
         run: choco install innosetup --no-progress -y
-        shell: pwsh
 
       - name: Build Installer
         run: |
