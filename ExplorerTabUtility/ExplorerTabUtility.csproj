@@ -16,6 +16,7 @@
         <PackageProjectUrl>https://github.com/w4po/ExplorerTabUtility</PackageProjectUrl>
         <RepositoryUrl>https://github.com/w4po/ExplorerTabUtility</RepositoryUrl>
         <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     </PropertyGroup>
 
     <ItemGroup>
@@ -62,11 +63,62 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Update="Resources\Strings.Designer.cs">
+        <Compile Include="App.xaml.cs" />
+        <Compile Include="Helpers\Constants.cs" />
+        <Compile Include="Helpers\Helper.cs" />
+        <Compile Include="Helpers\HotKeyActionJsonConverter.cs" />
+        <Compile Include="Helpers\IntPtrConverter.cs" />
+        <Compile Include="Helpers\KeyboardSimulator.cs" />
+        <Compile Include="Helpers\ProcessWatcher.cs" />
+        <Compile Include="Helpers\StaTaskScheduler.cs" />
+        <Compile Include="Hooks\ExplorerWatcher.cs" />
+        <Compile Include="Hooks\IHook.cs" />
+        <Compile Include="Hooks\Keyboard.cs" />
+        <Compile Include="Hooks\Mouse.cs" />
+        <Compile Include="Interop\IAccessible.cs" />
+        <Compile Include="Interop\IServiceProvider.cs" />
+        <Compile Include="Interop\IShellBrowser.cs" />
+        <Compile Include="Interop\IShellFolder.cs" />
+        <Compile Include="Interop\ShellPathComparer.cs" />
+        <Compile Include="Managers\ClipboardManager.cs" />
+        <Compile Include="Managers\HookManager.cs" />
+        <Compile Include="Managers\ProfileManager.cs" />
+        <Compile Include="Managers\RegistryManager.cs" />
+        <Compile Include="Managers\SettingsManager.cs" />
+        <Compile Include="Managers\UpdateManager.cs" />
+        <Compile Include="Models\DualKeyDictionary.cs" />
+        <Compile Include="Models\HotKeyAction.cs" />
+        <Compile Include="Models\HotKeyEventArgs.cs" />
+        <Compile Include="Models\HotKeyProfile.cs" />
+        <Compile Include="Models\HotkeyScope.cs" />
+        <Compile Include="Models\SupporterInfo.cs" />
+        <Compile Include="Models\WindowInfo.cs" />
+        <Compile Include="Models\WindowRecord.cs" />
+        <Compile Include="Resources\Strings.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
             <DependentUpon>Strings.resx</DependentUpon>
         </Compile>
+        <Compile Include="UI\Behaviors\HoverBackground.cs" />
+        <Compile Include="UI\Behaviors\HoverBorder.cs" />
+        <Compile Include="UI\Behaviors\HoverBrightness.cs" />
+        <Compile Include="UI\Commands\RelayCommand.cs" />
+        <Compile Include="UI\Converters\Base64ImageConverter.cs" />
+        <Compile Include="UI\Converters\EnumDescriptionConverter.cs" />
+        <Compile Include="UI\Converters\EnumToLocalizedStringConverter.cs" />
+        <Compile Include="UI\Converters\ProfileNameConverter.cs" />
+        <Compile Include="UI\Views\AboutView.xaml.cs" />
+        <Compile Include="UI\Views\CustomMessageBox.xaml.cs" />
+        <Compile Include="UI\Views\HotKeyProfileControl.xaml.cs" />
+        <Compile Include="UI\Views\MainWindow.xaml.cs" />
+        <Compile Include="UI\Views\TabSearchPopup.xaml.cs" />
+        <Compile Include="UI\Views\Controls\NumericInputControl.xaml.cs" />
+        <Compile Include="UI\Views\Controls\SystemTrayIcon.xaml.cs" />
+        <Compile Include="WinAPI\INPUT.cs" />
+        <Compile Include="WinAPI\RECT.cs" />
+        <Compile Include="WinAPI\VirtualKey.cs" />
+        <Compile Include="WinAPI\WinApi.cs" />
+        <Compile Include="WinAPI\WinEventDelegate.cs" />
     </ItemGroup>
 
     <ItemGroup>
