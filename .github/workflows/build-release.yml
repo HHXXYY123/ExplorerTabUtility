@@ -98,7 +98,7 @@ jobs:
           # Run Inno Setup Compiler with output directly to artifacts folder
           & "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe" `
             /DMyAppVersion="${{ env.VERSION }}" `
-            /DSourceDir=".\\artifacts" `
+            /DSourceDir="..\\artifacts" `
             "installers\\installer.iss"
         shell: pwsh
 
