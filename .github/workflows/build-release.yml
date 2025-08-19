@@ -94,7 +94,7 @@ jobs:
         with:
           repository: jrsoftware/issrc
           path: inno_src
-          depth: 1
+          fetch-depth: 1
 
       - name: Copy Inno Setup Chinese Language File
         shell: pwsh
