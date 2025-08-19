@@ -1,8 +1,7 @@
-[简体中文说明 (Simplified Chinese Readme)](README.zh-CN.md)
-
----
+[简体中文](README.zh-CN.md)
 
 # Explorer Tab Utility
+🚀 Supercharge Windows 11's File Explorer: Auto-convert windows to tabs, duplicate tabs, reopen closed ones, and more!
 
 > [!TIP]
 > Force new File Explorer windows to open as tabs in Windows 11, making your workflow cleaner and more organized!

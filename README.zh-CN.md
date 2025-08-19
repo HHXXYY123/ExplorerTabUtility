@@ -1,7 +1,7 @@
 # Explorer Tab Utility (文件资源管理器标签页工具)
+[English](README.md)
 
-> [!TIP]
-> 强制 Windows 11 中的新文件资源管理器窗口在标签页中打开，让您的工作流程更整洁、更有条理！
+🚀 为您的 Windows 11 文件资源管理器注入强劲动力：自动将新窗口转为标签页、复制现有标签页、重新打开已关闭的标签页，以及更多实用功能！
 
 ![Explorer Tab Utility Logo](Assets/ExplorerTabUtilityLogo.gif)
 
