@@ -1,3 +1,7 @@
+[简体中文说明 (Simplified Chinese Readme)](README.zh-CN.md)
+
+---
+
 # Explorer Tab Utility
 
 > [!TIP]
