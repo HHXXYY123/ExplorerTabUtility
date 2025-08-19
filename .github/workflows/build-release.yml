@@ -89,20 +89,15 @@ jobs:
           path: artifacts
           merge-multiple: true
 
-      - name: Get Inno Setup Chinese Language File by Cloning Repo
+      - name: Clone Inno Setup Source Repository
+        run: git clone --depth 1 https://github.com/jrsoftware/issrc.git inno_src
+
+      - name: Copy Inno Setup Chinese Language File
         shell: pwsh
         run: |
-          # Clone the Inno Setup source repository to a relative subdirectory
-          git clone --depth 1 https://github.com/jrsoftware/issrc.git inno_src
-          
-          # Define source and destination paths from the new relative location
           $src = ".\inno_src\Files\Languages\ChineseSimplified.isl"
           $destDir = "C:\Program Files (x86)\Inno Setup 6\Languages"
-          
-          # Ensure destination directory exists
           New-Item -ItemType Directory -Force -Path $destDir
-          
-          # Copy the file
           Copy-Item -Path $src -Destination $destDir -Force
 
       - name: Install Inno Setup
