@@ -92,11 +92,11 @@ jobs:
       - name: Get Inno Setup Chinese Language File by Cloning Repo
         shell: pwsh
         run: |
-          # Clone the Inno Setup source repository to a temporary path
-          git clone --depth 1 https://github.com/jrsoftware/issrc.git D:\inno_src
+          # Clone the Inno Setup source repository to a relative subdirectory
+          git clone --depth 1 https://github.com/jrsoftware/issrc.git inno_src
           
-          # Define source and destination paths
-          $src = "D:\inno_src\Files\Languages\ChineseSimplified.isl"
+          # Define source and destination paths from the new relative location
+          $src = ".\inno_src\Files\Languages\ChineseSimplified.isl"
           $destDir = "C:\Program Files (x86)\Inno Setup 6\Languages"
           
           # Ensure destination directory exists
