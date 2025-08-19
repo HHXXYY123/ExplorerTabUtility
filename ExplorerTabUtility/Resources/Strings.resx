@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- App Title -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>Explorer Tab Utility</value>
+  </data>
+  <!-- MainWindow -->
+  <data name="Menu_Open" xml:space="preserve">
+    <value>Open application menu</value>
+  </data>
+  <data name="Nav_Shortcuts" xml:space="preserve">
+    <value>Shortcuts</value>
+  </data>
+  <data name="Nav_Shortcuts_Tooltip" xml:space="preserve">
+    <value>Configure keyboard and mouse shortcuts</value>
+  </data>
+  <data name="Nav_Preferences" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="Nav_Preferences_Tooltip" xml:space="preserve">
+    <value>Configure application settings</value>
+  </data>
+  <data name="Nav_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Nav_About_Tooltip" xml:space="preserve">
+    <value>About the application and support options</value>
+  </data>
+  <data name="Shortcuts_New" xml:space="preserve">
+    <value>NEW</value>
+  </data>
+  <data name="Shortcuts_New_Tooltip" xml:space="preserve">
+    <value>Create a new profile</value>
+  </data>
+  <data name="Shortcuts_Import" xml:space="preserve">
+    <value>IMPORT</value>
+  </data>
+  <data name="Shortcuts_Import_Tooltip" xml:space="preserve">
+    <value>Import profiles from a file</value>
+  </data>
+  <data name="Shortcuts_Export" xml:space="preserve">
+    <value>EXPORT</value>
+  </data>
+  <data name="Shortcuts_Export_Tooltip" xml:space="preserve">
+    <value>Export profiles to a file</value>
+  </data>
+  <data name="Shortcuts_Save" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="Shortcuts_Save_Tooltip" xml:space="preserve">
+    <value>Persist all profile changes</value>
+  </data>
+  <data name="Shortcuts_AutoSave" xml:space="preserve">
+    <value>Auto save</value>
+  </data>
+  <data name="Shortcuts_AutoSave_Tooltip" xml:space="preserve">
+    <value>Automatically save profiles when closing the window</value>
+  </data>
+  <data name="Prefs_AppSettings" xml:space="preserve">
+    <value>Application Settings</value>
+  </data>
+  <data name="Prefs_AutoUpdate" xml:space="preserve">
+    <value>Auto update</value>
+  </data>
+  <data name="Prefs_AutoUpdate_Tooltip" xml:space="preserve">
+    <value>Automatically check for updates on startup</value>
+  </data>
+  <data name="Prefs_ThemeIssues" xml:space="preserve">
+    <value>I have theme issues</value>
+  </data>
+  <data name="Prefs_ThemeIssues_Tooltip" xml:space="preserve">
+    <value>Use alternative window hiding method that preserves your custom File-Explorer theme. Enable this if you have theme-related issues</value>
+  </data>
+  <data name="Prefs_SaveHistory" xml:space="preserve">
+    <value>Save closed history</value>
+  </data>
+  <data name="Prefs_SaveHistory_Tooltip" xml:space="preserve">
+    <value>Save closed windows history so you can reopen them later (ReopenClosed, Tab search)</value>
+  </data>
+  <data name="Prefs_RestoreWindows" xml:space="preserve">
+    <value>Restore previous windows</value>
+  </data>
+  <data name="Prefs_RestoreWindows_Tooltip" xml:space="preserve">
+    <value>Restore previously opened windows after restart or crash</value>
+  </data>
+  <data name="Prefs_HideTrayIcon" xml:space="preserve">
+    <value>Hide tray icon</value>
+  </data>
+  <data name="Prefs_HideTrayIcon_Tooltip" xml:space="preserve">
+    <value>Hide the system tray icon</value>
+  </data>
+  <data name="Status_WindowHook" xml:space="preserve">
+    <value>Window Hook</value>
+  </data>
+  <data name="Status_ReuseTabs" xml:space="preserve">
+    <value>Reuse Tabs</value>
+  </data>
+  <data name="Status_KeyboardHook" xml:space="preserve">
+    <value>Keyboard Hook</value>
+  </data>
+  <data name="Status_MouseHook" xml:space="preserve">
+    <value>Mouse Hook</value>
+  </data>
+  <data name="Msg_HideTrayIcon_Success" xml:space="preserve">
+    <value>You can show the app again by pressing {0}</value>
+  </data>
+  <data name="Msg_HideTrayIcon_Fail" xml:space="preserve">
+    <value>Cannot hide tray icon if no hotkey is configured to toggle visibility.</value>
+  </data>
+  <!-- AboutView -->
+  <data name="About_Description" xml:space="preserve">
+    <value>Enhance your Windows File Explorer experience</value>
+  </data>
+  <data name="About_StarOnGitHub" xml:space="preserve">
+    <value>Star on GitHub</value>
+  </data>
+  <data name="About_SupportProject" xml:space="preserve">
+    <value>Support the Project</value>
+  </data>
+  <data name="About_SupportDescription" xml:space="preserve">
+    <value>If you find this utility helpful, consider supporting its development through one of these options:</value>
+  </data>
+  <data name="About_GitHubSponsors" xml:space="preserve">
+    <value>GitHub Sponsors</value>
+  </data>
+  <data name="About_Patreon" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="About_BuyMeACoffee" xml:space="preserve">
+    <value>Buy Me A Coffee</value>
+  </data>
+  <data name="About_PayPal" xml:space="preserve">
+    <value>PayPal</value>
+  </data>
+  <data name="About_Developer" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="About_CurrentSupporters" xml:space="preserve">
+    <value>Current Supporters</value>
+  </data>
+  <data name="About_SupportersDescription" xml:space="preserve">
+    <value>Thank you to all the amazing people who support this project!</value>
+  </data>
+  <data name="About_BeFirstSupporter" xml:space="preserve">
+    <value>Be the first to support this project!</value>
+  </data>
+  <data name="About_SupportHelps" xml:space="preserve">
+    <value>Your support helps keep this project alive</value>
+  </data>
+  <!-- HotKeyProfileControl -->
+  <data name="Profile_Enable_Tooltip" xml:space="preserve">
+    <value>Enable or disable this profile</value>
+  </data>
+  <data name="Profile_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Profile_Name_Tooltip" xml:space="preserve">
+    <value>Name of the profile</value>
+  </data>
+  <data name="Profile_Hotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="Profile_Hotkeys_Tooltip" xml:space="preserve">
+    <value>Keyboard or mouse keys to listen for. Click to record a new key combination.</value>
+  </data>
+  <data name="Profile_Scope" xml:space="preserve">
+    <value>Scope</value>
+  </data>
+  <data name="Profile_Scope_Tooltip" xml:space="preserve">
+    <value>Scope of the hotkeys: Global (anywhere) or only when File Explorer is focused</value>
+  </data>
+  <data name="Profile_Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Profile_Action_Tooltip" xml:space="preserve">
+    <value>Action to perform when the hotkeys are pressed</value>
+  </data>
+  <data name="Profile_MoreOptions_Tooltip" xml:space="preserve">
+    <value>Show more options</value>
+  </data>
+  <data name="Profile_Delete_Tooltip" xml:space="preserve">
+    <value>Delete this profile</value>
+  </data>
+  <data name="Profile_Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Profile_Location_Tooltip" xml:space="preserve">
+    <value>Path to open when the hotkeys are pressed. (folder, file, website, CLSID)</value>
+  </data>
+  <data name="Profile_Delay" xml:space="preserve">
+    <value>Delay</value>
+  </data>
+  <data name="Profile_Delay_Tooltip" xml:space="preserve">
+    <value>Delay in milliseconds before performing the action</value>
+  </data>
+  <data name="Profile_Handled" xml:space="preserve">
+    <value>Handled</value>
+  </data>
+  <data name="Profile_Handled_Tooltip" xml:space="preserve">
+    <value>Prevent further processing of the hotkeys in other applications</value>
+  </data>
+  <data name="Profile_OpenAsTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="Profile_OpenAsTab_Tooltip" xml:space="preserve">
+    <value>Open as tab instead of a new window</value>
+  </data>
+  <!-- SystemTrayIcon -->
+  <data name="Tray_KeyboardHook_Tooltip" xml:space="preserve">
+    <value>Enable or disable keyboard shortcuts</value>
+  </data>
+  <data name="Tray_MouseHook_Tooltip" xml:space="preserve">
+    <value>Enable or disable mouse shortcuts</value>
+  </data>
+  <data name="Tray_WindowHook_Tooltip" xml:space="preserve">
+    <value>Toggle automatic redirection of new Explorer windows to tabs</value>
+  </data>
+  <data name="Tray_ReuseTabs_Tooltip" xml:space="preserve">
+    <value>When enabled, navigates to existing tabs instead of opening duplicate tabs</value>
+  </data>
+  <data name="Tray_AddToStartup" xml:space="preserve">
+    <value>Add to startup</value>
+  </data>
+  <data name="Tray_AddToStartup_Tooltip" xml:space="preserve">
+    <value>Automatically start Explorer Tab Utility when Windows starts</value>
+  </data>
+  <data name="Tray_CheckForUpdates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="Tray_CheckForUpdates_Tooltip" xml:space="preserve">
+    <value>Check if a newer version of Explorer Tab Utility is available</value>
+  </data>
+  <data name="Tray_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Tray_Settings_Tooltip" xml:space="preserve">
+    <value>Open the settings window to configure the application</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Tray_Exit_Tooltip" xml:space="preserve">
+    <value>Close Explorer Tab Utility and stop all hooks</value>
+  </data>
+</root> 
