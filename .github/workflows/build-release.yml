@@ -76,56 +76,18 @@ jobs:
           name: ${{ steps.zip_artifacts.outputs.zipName }}
           path: ${{ steps.zip_artifacts.outputs.zipName }}
 
-  sign-artifacts:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: ./artifacts
-          merge-multiple: true
-
-      - name: Upload signing bundle to GitHub
-        id: upload-unsigned-bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: unsigned-bundle
-          path: ./artifacts/*.zip
-
-      - name: Submit bundle for signing
-        id: submit-signing
-        uses: signpath/github-action-submit-signing-request@v1.1
-        with:
-          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
-          organization-id: ${{ env.SIGNPATH_ORG_ID }}
-          project-slug: ${{ env.SIGNPATH_PROJECT_SLUG }}
-          signing-policy-slug: ${{ env.SIGNPATH_POLICY_SLUG }}
-          artifact-configuration-slug: multi-zip
-          github-artifact-id: ${{ steps.upload-unsigned-bundle.outputs.artifact-id }}
-          wait-for-completion: true
-          output-artifact-directory: './signed-output'
-          parameters: |
-            version: "${{ env.VERSION }}"
-
-      - name: Upload signed artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: signed-artifacts
-          path: ./signed-output/*.zip
-
   build-installer:
-    needs: sign-artifacts
+    needs: build
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download Signed Artifacts
+      - name: Download Unsigned Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: signed-artifacts
           path: artifacts
+          merge-multiple: true
 
       - name: Install Inno Setup
         run: choco install innosetup --no-progress -y
@@ -134,42 +96,21 @@ jobs:
       - name: Build Installer
         run: |
           # Run Inno Setup Compiler with output directly to artifacts folder
-          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" `
+          & "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe" `
             /DMyAppVersion="${{ env.VERSION }}" `
-            /DSourceDir="..\artifacts" `
-            "installers\installer.iss"
+            /DSourceDir=".\\artifacts" `
+            "installers\\installer.iss"
         shell: pwsh
 
       - name: Upload unsigned installer
         id: upload-unsigned-installer
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup-unsigned
+          name: ${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup-unsigned.exe
           path: artifacts/*.exe
 
-      - name: Submit installer for signing
-        id: submit-installer-signing
-        uses: signpath/github-action-submit-signing-request@v1.1
-        with:
-          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
-          organization-id: ${{ env.SIGNPATH_ORG_ID }}
-          project-slug: ${{ env.SIGNPATH_PROJECT_SLUG }}
-          signing-policy-slug: ${{ env.SIGNPATH_POLICY_SLUG }}
-          artifact-configuration-slug: single-zip-executable
-          github-artifact-id: ${{ steps.upload-unsigned-installer.outputs.artifact-id }}
-          wait-for-completion: true
-          output-artifact-directory: './signed-installer'
-          parameters: |
-            version: "${{ env.VERSION }}"
-
-      - name: Upload signed installer
-        uses: actions/upload-artifact@v4
-        with:
-          name: signed-installer
-          path: ./signed-installer/*.exe
-
   create-release:
-    needs: [ sign-artifacts, build-installer ]
+    needs: [ build, build-installer ]
     runs-on: windows-latest
     permissions:
       contents: write       # Required to create releases
@@ -178,17 +119,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download Signed Artifacts
+      - name: Download all Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: signed-artifacts
           path: release-artifacts
-
-      - name: Download Signed Installer
-        uses: actions/download-artifact@v4
-        with:
-          name: signed-installer
-          path: release-artifacts
+          merge-multiple: true
 
       - name: Generate Changelog
         id: generate_changelog
@@ -231,7 +166,7 @@ jobs:
           body: |
             ${{ steps.generate_changelog.outputs.changelog }}
             
-            **Note:** If you are not sure, then you probably want: [${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup.exe](https://github.com/${{ github.repository }}/releases/download/${{ env.VERSION }}/${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup.exe)
+            **Note:** If you are not sure, then you probably want: [${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup-unsigned.exe](https://github.com/${{ github.repository }}/releases/download/${{ env.VERSION }}/${{ env.PROJECT_NAME }}_${{ env.VERSION }}_Setup-unsigned.exe)
           files: |
             release-artifacts/*.zip
             release-artifacts/*.exe
