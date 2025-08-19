@@ -70,11 +70,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="UI\Converters\EnumToLocalizedStringConverter.cs" />
-      <Compile Include="UI\Converters\ProfileNameConverter.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
         <EmbeddedResource Update="Resources\Strings.resx">
             <Generator>PublicResXFileCodeGenerator</Generator>
             <LastGenOutput>Strings.Designer.cs</LastGenOutput>
