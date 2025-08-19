@@ -89,6 +89,13 @@ jobs:
           path: artifacts
           merge-multiple: true
 
+      - name: Download Inno Setup Chinese Language File
+        run: |
+          $url = "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/ChineseSimp.isl"
+          $dest = "C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimp.isl"
+          Invoke-WebRequest -Uri $url -OutFile $dest
+        shell: pwsh
+
       - name: Install Inno Setup
         run: choco install innosetup --no-progress -y
         shell: pwsh
