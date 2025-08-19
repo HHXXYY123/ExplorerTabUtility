@@ -89,14 +89,21 @@ jobs:
           path: artifacts
           merge-multiple: true
 
-      - name: Download Inno Setup Chinese Language File
+      - name: Get Inno Setup Chinese Language File by Cloning Repo
         shell: pwsh
         run: |
-          $url = "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/ChineseSimplified.isl"
-          $dest = "C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl"
-          New-Item -ItemType Directory -Force -Path (Split-Path $dest)
-          $webClient = New-Object System.Net.WebClient
-          $webClient.DownloadFile($url, $dest)
+          # Clone the Inno Setup source repository to a temporary path
+          git clone --depth 1 https://github.com/jrsoftware/issrc.git D:\inno_src
+          
+          # Define source and destination paths
+          $src = "D:\inno_src\Files\Languages\ChineseSimplified.isl"
+          $destDir = "C:\Program Files (x86)\Inno Setup 6\Languages"
+          
+          # Ensure destination directory exists
+          New-Item -ItemType Directory -Force -Path $destDir
+          
+          # Copy the file
+          Copy-Item -Path $src -Destination $destDir -Force
 
       - name: Install Inno Setup
         run: choco install innosetup --no-progress -y
