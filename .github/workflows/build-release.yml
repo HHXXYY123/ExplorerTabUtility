@@ -91,8 +91,9 @@ jobs:
 
       - name: Download Inno Setup Chinese Language File
         run: |
-          $url = "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/ChineseSimp.isl"
-          $dest = "C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimp.isl"
+          $url = "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/ChineseSimplified.isl"
+          $dest = "C:\Program Files (x86)\In-no Setup 6\Languages\ChineseSimplified.isl"
+          New-Item -ItemType Directory -Force -Path (Split-Path $dest)
           Invoke-WebRequest -Uri $url -OutFile $dest
         shell: pwsh
 
