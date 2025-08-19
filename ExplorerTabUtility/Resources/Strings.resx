@@ -273,6 +273,72 @@
   <data name="Tray_WindowHook_Tooltip" xml:space="preserve">
     <value>Toggle automatic redirection of new Explorer windows to tabs</value>
   </data>
+  <!-- HotkeyScope Enum -->
+  <data name="Enum_HotkeyScope_Global" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Enum_HotkeyScope_FileExplorer" xml:space="preserve">
+    <value>FileExplorer</value>
+  </data>
+  <!-- HotKeyAction Enum -->
+  <data name="Enum_HotKeyAction_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Enum_HotKeyAction_Duplicate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="Enum_HotKeyAction_ReopenClosed" xml:space="preserve">
+    <value>ReopenClosed</value>
+  </data>
+  <data name="Enum_HotKeyAction_TabSearch" xml:space="preserve">
+    <value>TabSearch</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateBack" xml:space="preserve">
+    <value>NavigateBack</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateUp" xml:space="preserve">
+    <value>NavigateUp</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateForward" xml:space="preserve">
+    <value>NavigateForward</value>
+  </data>
+  <data name="Enum_HotKeyAction_SetTargetWindow" xml:space="preserve">
+    <value>SetTargetWindow</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleWinHook" xml:space="preserve">
+    <value>ToggleWinHook</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleReuseTabs" xml:space="preserve">
+    <value>ToggleReuseTabs</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleVisibility" xml:space="preserve">
+    <value>ToggleVisibility</value>
+  </data>
+  <data name="Enum_HotKeyAction_DetachTab" xml:space="preserve">
+    <value>DetachTab</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapRight" xml:space="preserve">
+    <value>SnapRight</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapLeft" xml:space="preserve">
+    <value>SnapLeft</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapUp" xml:space="preserve">
+    <value>SnapUp</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapDown" xml:space="preserve">
+    <value>SnapDown</value>
+  </data>
+  <!-- Default Profile Names -->
+  <data name="DefaultProfile_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="DefaultProfile_Duplicate" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="DefaultProfile_ReopenClosed" xml:space="preserve">
+    <value>ReopenClosed</value>
+  </data>
   <data name="Tray_ReuseTabs_Tooltip" xml:space="preserve">
     <value>When enabled, navigates to existing tabs instead of opening duplicate tabs</value>
   </data>

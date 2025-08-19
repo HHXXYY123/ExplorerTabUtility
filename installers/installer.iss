@@ -58,10 +58,11 @@ VersionInfoProductVersion={#MyAppNumericVersion}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "chinesesimp"; MessagesFile: "compiler:Languages\ChineseSimp.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "startupicon"; Description: "Start with Windows"; GroupDescription: "Windows Integration"; Flags: unchecked
+Name: "startupicon"; Description: "{cm:StartupApp}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
 Source: "..\LICENSE"; DestDir: "{app}"; Flags: ignoreversion

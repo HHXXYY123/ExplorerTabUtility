@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:ExplorerTabUtility.UI.Views.Controls"
              xmlns:p="clr-namespace:ExplorerTabUtility.Resources"
+             xmlns:converters="clr-namespace:ExplorerTabUtility.UI.Converters"
              mc:Ignorable="d"
              TextBlock.Foreground="{StaticResource TextPrimaryBrush}"
              TextElement.Foreground="{StaticResource TextPrimaryBrush}"
@@ -12,6 +13,8 @@
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <converters:EnumToLocalizedStringConverter x:Key="EnumToLocalizedStringConverter" />
+        <converters:ProfileNameConverter x:Key="ProfileNameConverter" />
     </UserControl.Resources>
 
     <Border Style="{StaticResource ProfileCardStyle}">
@@ -41,7 +44,8 @@
 
                 <!-- Name -->
                 <TextBox x:Name="TxtName" Grid.Column="1" Tag="{x:Static p:Strings.Profile_Name}" Style="{StaticResource CustomTextBoxStyle}"
-                         ToolTip="{x:Static p:Strings.Profile_Name_Tooltip}" />
+                         ToolTip="{x:Static p:Strings.Profile_Name_Tooltip}"
+                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ProfileNameConverter}}" />
 
                 <!-- Hotkeys -->
                 <TextBox x:Name="TxtHotKeys" Grid.Column="3" Tag="{x:Static p:Strings.Profile_Hotkeys}" Style="{StaticResource CustomTextBoxStyle}"
@@ -49,11 +53,23 @@
 
                 <!-- Scope -->
                 <ComboBox x:Name="CbScope" Grid.Column="5" Style="{StaticResource CustomComboBoxStyle}"
-                          ToolTip="{x:Static p:Strings.Profile_Scope_Tooltip}" />
+                          ToolTip="{x:Static p:Strings.Profile_Scope_Tooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
                 <!-- Action -->
                 <ComboBox x:Name="CbAction" Grid.Column="6" Style="{StaticResource CustomComboBoxStyle}" Width="150"
-                          ToolTip="{x:Static p:Strings.Profile_Action_Tooltip}" />
+                          ToolTip="{x:Static p:Strings.Profile_Action_Tooltip}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedStringConverter}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
                 <!-- Expander button -->
                 <ToggleButton x:Name="ExpanderToggle" Grid.Column="7" Margin="4, 0" Style="{StaticResource ToggleButtonArrowStyle}"

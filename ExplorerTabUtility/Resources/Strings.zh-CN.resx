@@ -271,7 +271,7 @@
     <value>启用或禁用鼠标快捷方式</value>
   </data>
   <data name="Tray_WindowHook_Tooltip" xml:space="preserve">
-    <value>切换新资源管理器窗口自动重定向到标签页的功能</value>
+    <value>切换是否自动将新窗口重定向到标签页</value>
   </data>
   <data name="Tray_ReuseTabs_Tooltip" xml:space="preserve">
     <value>启用后，将导航到现有标签页而不是打开重复的标签页</value>
@@ -299,5 +299,71 @@
   </data>
   <data name="Tray_Exit_Tooltip" xml:space="preserve">
     <value>关闭本工具并停止所有挂钩</value>
+  </data>
+  <!-- HotkeyScope Enum -->
+  <data name="Enum_HotkeyScope_Global" xml:space="preserve">
+    <value>全局</value>
+  </data>
+  <data name="Enum_HotkeyScope_FileExplorer" xml:space="preserve">
+    <value>文件资源管理器</value>
+  </data>
+  <!-- HotKeyAction Enum -->
+  <data name="Enum_HotKeyAction_Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="Enum_HotKeyAction_Duplicate" xml:space="preserve">
+    <value>复制标签页</value>
+  </data>
+  <data name="Enum_HotKeyAction_ReopenClosed" xml:space="preserve">
+    <value>重新打开</value>
+  </data>
+  <data name="Enum_HotKeyAction_TabSearch" xml:space="preserve">
+    <value>标签页搜索</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateBack" xml:space="preserve">
+    <value>后退</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateUp" xml:space="preserve">
+    <value>向上</value>
+  </data>
+  <data name="Enum_HotKeyAction_NavigateForward" xml:space="preserve">
+    <value>前进</value>
+  </data>
+  <data name="Enum_HotKeyAction_SetTargetWindow" xml:space="preserve">
+    <value>设为目标窗口</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleWinHook" xml:space="preserve">
+    <value>切换窗口挂钩</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleReuseTabs" xml:space="preserve">
+    <value>切换复用标签页</value>
+  </data>
+  <data name="Enum_HotKeyAction_ToggleVisibility" xml:space="preserve">
+    <value>切换程序可见性</value>
+  </data>
+  <data name="Enum_HotKeyAction_DetachTab" xml:space="preserve">
+    <value>分离标签页</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapRight" xml:space="preserve">
+    <value>窗口贴靠右侧</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapLeft" xml:space="preserve">
+    <value>窗口贴靠左侧</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapUp" xml:space="preserve">
+    <value>窗口贴靠顶部</value>
+  </data>
+  <data name="Enum_HotKeyAction_SnapDown" xml:space="preserve">
+    <value>窗口贴靠底部</value>
+  </data>
+  <!-- Default Profile Names -->
+  <data name="DefaultProfile_Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="DefaultProfile_Duplicate" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="DefaultProfile_ReopenClosed" xml:space="preserve">
+    <value>重新打开</value>
   </data>
 </root> 
