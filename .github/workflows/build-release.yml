@@ -89,8 +89,12 @@ jobs:
           path: artifacts
           merge-multiple: true
 
-      - name: Clone Inno Setup Source Repository
-        run: git clone --depth 1 https://github.com/jrsoftware/issrc.git inno_src
+      - name: Checkout Inno Setup Source Repository
+        uses: actions/checkout@v4
+        with:
+          repository: jrsoftware/issrc
+          path: inno_src
+          depth: 1
 
       - name: Copy Inno Setup Chinese Language File
         shell: pwsh
