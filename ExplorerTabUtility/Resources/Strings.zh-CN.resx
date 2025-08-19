@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- App Title -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>文件资源管理器标签页工具</value>
+  </data>
+  <!-- MainWindow -->
+  <data name="Menu_Open" xml:space="preserve">
+    <value>打开应用程序菜单</value>
+  </data>
+  <data name="Nav_Shortcuts" xml:space="preserve">
+    <value>快捷方式</value>
+  </data>
+  <data name="Nav_Shortcuts_Tooltip" xml:space="preserve">
+    <value>配置键盘和鼠标快捷方式</value>
+  </data>
+  <data name="Nav_Preferences" xml:space="preserve">
+    <value>首选项</value>
+  </data>
+  <data name="Nav_Preferences_Tooltip" xml:space="preserve">
+    <value>配置应用程序设置</value>
+  </data>
+  <data name="Nav_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Nav_About_Tooltip" xml:space="preserve">
+    <value>关于本应用及支持选项</value>
+  </data>
+  <data name="Shortcuts_New" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="Shortcuts_New_Tooltip" xml:space="preserve">
+    <value>创建一个新的配置文件</value>
+  </data>
+  <data name="Shortcuts_Import" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="Shortcuts_Import_Tooltip" xml:space="preserve">
+    <value>从文件导入配置文件</value>
+  </data>
+  <data name="Shortcuts_Export" xml:space="preserve">
+    <value>导出</value>
+  </data>
+  <data name="Shortcuts_Export_Tooltip" xml:space="preserve">
+    <value>将配置文件导出到文件</value>
+  </data>
+  <data name="Shortcuts_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Shortcuts_Save_Tooltip" xml:space="preserve">
+    <value>保存所有配置文件的更改</value>
+  </data>
+  <data name="Shortcuts_AutoSave" xml:space="preserve">
+    <value>自动保存</value>
+  </data>
+  <data name="Shortcuts_AutoSave_Tooltip" xml:space="preserve">
+    <value>关闭窗口时自动保存配置文件</value>
+  </data>
+  <data name="Prefs_AppSettings" xml:space="preserve">
+    <value>应用程序设置</value>
+  </data>
+  <data name="Prefs_AutoUpdate" xml:space="preserve">
+    <value>自动更新</value>
+  </data>
+  <data name="Prefs_AutoUpdate_Tooltip" xml:space="preserve">
+    <value>启动时自动检查更新</value>
+  </data>
+  <data name="Prefs_ThemeIssues" xml:space="preserve">
+    <value>我遇到了主题问题</value>
+  </data>
+  <data name="Prefs_ThemeIssues_Tooltip" xml:space="preserve">
+    <value>使用备用窗口隐藏方法以保留您的自定义文件资源管理器主题。如果您遇到了与主题相关的问题，请启用此选项。</value>
+  </data>
+  <data name="Prefs_SaveHistory" xml:space="preserve">
+    <value>保存关闭历史</value>
+  </data>
+  <data name="Prefs_SaveHistory_Tooltip" xml:space="preserve">
+    <value>保存已关闭窗口的历史记录，以便稍后重新打开它们 (用于“重新打开已关闭”和“标签页搜索”功能)</value>
+  </data>
+  <data name="Prefs_RestoreWindows" xml:space="preserve">
+    <value>恢复之前的窗口</value>
+  </data>
+  <data name="Prefs_RestoreWindows_Tooltip" xml:space="preserve">
+    <value>重启或崩溃后恢复之前打开的窗口</value>
+  </data>
+  <data name="Prefs_HideTrayIcon" xml:space="preserve">
+    <value>隐藏托盘图标</value>
+  </data>
+  <data name="Prefs_HideTrayIcon_Tooltip" xml:space="preserve">
+    <value>隐藏系统托盘图标</value>
+  </data>
+  <data name="Status_WindowHook" xml:space="preserve">
+    <value>窗口挂钩</value>
+  </data>
+  <data name="Status_ReuseTabs" xml:space="preserve">
+    <value>复用标签页</value>
+  </data>
+  <data name="Status_KeyboardHook" xml:space="preserve">
+    <value>键盘挂钩</value>
+  </data>
+  <data name="Status_MouseHook" xml:space="preserve">
+    <value>鼠标挂钩</value>
+  </data>
+  <data name="Msg_HideTrayIcon_Success" xml:space="preserve">
+    <value>你可以通过按下 {0} 来重新显示应用窗口</value>
+  </data>
+  <data name="Msg_HideTrayIcon_Fail" xml:space="preserve">
+    <value>如果未配置用于切换可见性的热键，则无法隐藏托盘图标。</value>
+  </data>
+  <!-- AboutView -->
+  <data name="About_Description" xml:space="preserve">
+    <value>增强您的 Windows 文件资源管理器体验</value>
+  </data>
+  <data name="About_StarOnGitHub" xml:space="preserve">
+    <value>在 GitHub 上点亮星星</value>
+  </data>
+  <data name="About_SupportProject" xml:space="preserve">
+    <value>支持此项目</value>
+  </data>
+  <data name="About_SupportDescription" xml:space="preserve">
+    <value>如果您觉得此工具对您有帮助，请考虑通过以下方式之一支持其发展：</value>
+  </data>
+  <data name="About_GitHubSponsors" xml:space="preserve">
+    <value>GitHub 赞助</value>
+  </data>
+  <data name="About_Patreon" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="About_BuyMeACoffee" xml:space="preserve">
+    <value>请我喝杯咖啡</value>
+  </data>
+  <data name="About_PayPal" xml:space="preserve">
+    <value>PayPal</value>
+  </data>
+  <data name="About_Developer" xml:space="preserve">
+    <value>开发者</value>
+  </data>
+  <data name="About_CurrentSupporters" xml:space="preserve">
+    <value>当前的支持者</value>
+  </data>
+  <data name="About_SupportersDescription" xml:space="preserve">
+    <value>感谢所有支持本项目的杰出人士！</value>
+  </data>
+  <data name="About_BeFirstSupporter" xml:space="preserve">
+    <value>成为第一个支持本项目的人！</value>
+  </data>
+  <data name="About_SupportHelps" xml:space="preserve">
+    <value>您的支持是本项目持续发展的动力</value>
+  </data>
+  <!-- HotKeyProfileControl -->
+  <data name="Profile_Enable_Tooltip" xml:space="preserve">
+    <value>启用或禁用此配置文件</value>
+  </data>
+  <data name="Profile_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Profile_Name_Tooltip" xml:space="preserve">
+    <value>配置文件的名称</value>
+  </data>
+  <data name="Profile_Hotkeys" xml:space="preserve">
+    <value>热键</value>
+  </data>
+  <data name="Profile_Hotkeys_Tooltip" xml:space="preserve">
+    <value>要监听的键盘或鼠标按键。点击以录制新的组合键。</value>
+  </data>
+  <data name="Profile_Scope" xml:space="preserve">
+    <value>作用域</value>
+  </data>
+  <data name="Profile_Scope_Tooltip" xml:space="preserve">
+    <value>热键的作用域：全局（任何地方）或仅在文件资源管理器获得焦点时生效</value>
+  </data>
+  <data name="Profile_Action" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="Profile_Action_Tooltip" xml:space="preserve">
+    <value>按下热键时要执行的操作</value>
+  </data>
+  <data name="Profile_MoreOptions_Tooltip" xml:space="preserve">
+    <value>显示更多选项</value>
+  </data>
+  <data name="Profile_Delete_Tooltip" xml:space="preserve">
+    <value>删除此配置文件</value>
+  </data>
+  <data name="Profile_Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="Profile_Location_Tooltip" xml:space="preserve">
+    <value>按下热键时要打开的路径。（文件夹、文件、网站、CLSID）</value>
+  </data>
+  <data name="Profile_Delay" xml:space="preserve">
+    <value>延迟</value>
+  </data>
+  <data name="Profile_Delay_Tooltip" xml:space="preserve">
+    <value>执行操作前的延迟（毫秒）</value>
+  </data>
+  <data name="Profile_Handled" xml:space="preserve">
+    <value>已处理</value>
+  </data>
+  <data name="Profile_Handled_Tooltip" xml:space="preserve">
+    <value>阻止其他应用程序进一步处理此热键</value>
+  </data>
+  <data name="Profile_OpenAsTab" xml:space="preserve">
+    <value>标签页</value>
+  </data>
+  <data name="Profile_OpenAsTab_Tooltip" xml:space="preserve">
+    <value>作为标签页打开，而不是新窗口</value>
+  </data>
+  <!-- SystemTrayIcon -->
+  <data name="Tray_KeyboardHook_Tooltip" xml:space="preserve">
+    <value>启用或禁用键盘快捷方式</value>
+  </data>
+  <data name="Tray_MouseHook_Tooltip" xml:space="preserve">
+    <value>启用或禁用鼠标快捷方式</value>
+  </data>
+  <data name="Tray_WindowHook_Tooltip" xml:space="preserve">
+    <value>切换新资源管理器窗口自动重定向到标签页的功能</value>
+  </data>
+  <data name="Tray_ReuseTabs_Tooltip" xml:space="preserve">
+    <value>启用后，将导航到现有标签页而不是打开重复的标签页</value>
+  </data>
+  <data name="Tray_AddToStartup" xml:space="preserve">
+    <value>添加到启动项</value>
+  </data>
+  <data name="Tray_AddToStartup_Tooltip" xml:space="preserve">
+    <value>Windows 启动时自动运行本工具</value>
+  </data>
+  <data name="Tray_CheckForUpdates" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="Tray_CheckForUpdates_Tooltip" xml:space="preserve">
+    <value>检查是否有可用的新版本</value>
+  </data>
+  <data name="Tray_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Tray_Settings_Tooltip" xml:space="preserve">
+    <value>打开设置窗口以配置应用程序</value>
+  </data>
+  <data name="Tray_Exit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Tray_Exit_Tooltip" xml:space="preserve">
+    <value>关闭本工具并停止所有挂钩</value>
+  </data>
+</root> 
