@@ -364,6 +364,12 @@
     <value>复制</value>
   </data>
   <data name="DefaultProfile_ReopenClosed" xml:space="preserve">
-    <value>重新打开</value>
+    <value>重新打开已关闭</value>
+  </data>
+  <data name="Dialog_Message_ResetSettings" xml:space="preserve">
+    <value>您确定要重置所有设置吗？</value>
+  </data>
+  <data name="Dialog_Message_Restart" xml:space="preserve">
+    <value>需要重启应用程序以应用更改。是否立即重启？</value>
   </data>
 </root> 

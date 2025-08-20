@@ -28,3 +28,47 @@ public class EnumDescriptionConverter : IValueConverter
         return value;
     }
 }
+
+public class EnumToLocalizedStringConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is not Enum enumValue)
+        {
+            return value;
+        }
+
+        var enumType = enumValue.GetType();
+        var resourceKey = $"Enum_{enumType.Name}_{enumValue}";
+        
+        var localizedString = Resources.Strings.ResourceManager.GetString(resourceKey, Resources.Strings.Culture);
+
+        return !string.IsNullOrEmpty(localizedString) ? localizedString : enumValue.ToString();
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class ProfileNameConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is not string profileName)
+        {
+            return value;
+        }
+
+        var resourceKey = $"DefaultProfile_{profileName}";
+        var localizedString = Resources.Strings.ResourceManager.GetString(resourceKey, Resources.Strings.Culture);
+
+        return !string.IsNullOrEmpty(localizedString) ? localizedString : profileName;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

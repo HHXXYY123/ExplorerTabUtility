@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:controls="clr-namespace:ExplorerTabUtility.UI.Views.Controls"
+             xmlns:local="clr-namespace:ExplorerTabUtility.UI.Views"
              xmlns:p="clr-namespace:ExplorerTabUtility.Resources"
+             xmlns:m="clr-namespace:ExplorerTabUtility.Models"
              xmlns:converters="clr-namespace:ExplorerTabUtility.UI.Converters"
              mc:Ignorable="d"
              TextBlock.Foreground="{StaticResource TextPrimaryBrush}"
              TextElement.Foreground="{StaticResource TextPrimaryBrush}"
-             d:DesignHeight="125" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
@@ -43,16 +44,16 @@
                               VerticalAlignment="Stretch" ToolTip="{x:Static p:Strings.Profile_Enable_Tooltip}" />
 
                 <!-- Name -->
-                <TextBox x:Name="TxtName" Grid.Column="1" Tag="{x:Static p:Strings.Profile_Name}" Style="{StaticResource CustomTextBoxStyle}"
+                <TextBox x:Name="TxtName" Grid.Column="1" Tag="{x:Static p:Strings.Profile_Name}" Style="{StaticResource HotkeyTextBoxStyle}"
                          ToolTip="{x:Static p:Strings.Profile_Name_Tooltip}"
                          Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ProfileNameConverter}}" />
 
                 <!-- Hotkeys -->
-                <TextBox x:Name="TxtHotKeys" Grid.Column="3" Tag="{x:Static p:Strings.Profile_Hotkeys}" Style="{StaticResource CustomTextBoxStyle}"
+                <TextBox x:Name="TxtHotKey" Grid.Column="2" Tag="{x:Static p:Strings.Profile_Hotkeys}" Style="{StaticResource HotkeyTextBoxStyle}"
                          ToolTip="{x:Static p:Strings.Profile_Hotkeys_Tooltip}" />
 
                 <!-- Scope -->
-                <ComboBox x:Name="CbScope" Grid.Column="5" Style="{StaticResource CustomComboBoxStyle}"
+                <ComboBox x:Name="CbScope" Grid.Column="3" Style="{StaticResource CustomComboBoxStyle}"
                           ToolTip="{x:Static p:Strings.Profile_Scope_Tooltip}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -62,7 +63,7 @@
                 </ComboBox>
 
                 <!-- Action -->
-                <ComboBox x:Name="CbAction" Grid.Column="6" Style="{StaticResource CustomComboBoxStyle}" Width="150"
+                <ComboBox x:Name="CbAction" Grid.Column="4" Style="{StaticResource CustomComboBoxStyle}" Width="150"
                           ToolTip="{x:Static p:Strings.Profile_Action_Tooltip}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
