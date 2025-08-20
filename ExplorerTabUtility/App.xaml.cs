@@ -8,7 +8,7 @@ namespace ExplorerTabUtility
     /// </summary>
     public partial class App : Application
     {
-        private Mutex _mutex;
+        private Mutex? _mutex;
 
         protected override void OnStartup(StartupEventArgs e)
         {
