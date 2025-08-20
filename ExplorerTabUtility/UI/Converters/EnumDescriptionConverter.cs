@@ -1,74 +1,28 @@
 using System;
-using System.Linq;
-using System.Windows;
-using System.Windows.Data;
-using System.Globalization;
 using System.ComponentModel;
+using System.Globalization;
+using System.Windows.Data;
 
-namespace ExplorerTabUtility.UI.Converters;
-
-public class EnumDescriptionConverter : IValueConverter
+namespace ExplorerTabUtility.UI.Converters
 {
-    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public class EnumDescriptionConverter : IValueConverter
     {
-        if (value == null) return DependencyProperty.UnsetValue;
-
-        var valueStr = value.ToString()!;
-        var fieldInfo = value.GetType().GetField(valueStr);
-        if (fieldInfo == null) return valueStr;
-
-        var descriptionAttribute = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false)
-            .FirstOrDefault() as DescriptionAttribute;
-
-        return descriptionAttribute?.Description ?? valueStr;
-    }
-
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-    {
-        return value;
-    }
-}
-
-public class EnumToLocalizedStringConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value is not Enum enumValue)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value;
+            if (value is not Enum enumValue) 
+                return value;
+
+            var field = enumValue.GetType().GetField(enumValue.ToString());
+            if (field is null)
+                return value;
+
+            var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes.Length > 0 ? attributes[0].Description : enumValue.ToString();
         }
 
-        var enumType = enumValue.GetType();
-        var resourceKey = $"Enum_{enumType.Name}_{enumValue}";
-        
-        var localizedString = Resources.Strings.ResourceManager.GetString(resourceKey, Resources.Strings.Culture);
-
-        return !string.IsNullOrEmpty(localizedString) ? localizedString : enumValue.ToString();
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
-    }
-}
-
-public class ProfileNameConverter : IValueConverter
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value is not string profileName)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value;
+            throw new NotSupportedException();
         }
-
-        var resourceKey = $"DefaultProfile_{profileName}";
-        var localizedString = Resources.Strings.ResourceManager.GetString(resourceKey, Resources.Strings.Culture);
-
-        return !string.IsNullOrEmpty(localizedString) ? localizedString : profileName;
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        throw new NotImplementedException();
     }
 }
