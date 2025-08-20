@@ -7,6 +7,7 @@
              xmlns:p="clr-namespace:ExplorerTabUtility.Resources"
              xmlns:m="clr-namespace:ExplorerTabUtility.Models"
              xmlns:converters="clr-namespace:ExplorerTabUtility.UI.Converters"
+             xmlns:controls="clr-namespace:ExplorerTabUtility.UI.Views.Controls"
              mc:Ignorable="d"
              TextBlock.Foreground="{StaticResource TextPrimaryBrush}"
              TextElement.Foreground="{StaticResource TextPrimaryBrush}"
