@@ -51,7 +51,7 @@ public partial class HotKeyProfileControl : UserControl
         TxtName.Text = _profile.Name ?? string.Empty;
 
         if (_profile.HotKeys != null)
-            TxtHotKeys.Text = _profile.HotKeys.HotKeysToString(_profile.IsDoubleClick);
+            TxtHotKey.Text = _profile.HotKeys.HotKeysToString(_profile.IsDoubleClick);
 
         // Setup ComboBoxes
         CbScope.ItemsSource = Enum.GetValues(typeof(HotkeyScope));
@@ -74,9 +74,9 @@ public partial class HotKeyProfileControl : UserControl
         CbEnabled.Checked += CbEnabled_CheckedChanged;
         CbEnabled.Unchecked += CbEnabled_CheckedChanged;
         TxtName.TextChanged += TxtName_TextChanged;
-        TxtHotKeys.GotFocus += TxtHotKeys_Enter;
-        TxtHotKeys.LostFocus += TxtHotKeys_Leave;
-        TxtHotKeys.PreviewKeyDown += TxtHotKeys_KeyDown;
+        TxtHotKey.GotFocus += TxtHotKey_Enter;
+        TxtHotKey.LostFocus += TxtHotKey_Leave;
+        TxtHotKey.PreviewKeyDown += TxtHotKey_KeyDown;
         CbScope.SelectionChanged += CbScope_SelectedIndexChanged;
         CbAction.SelectionChanged += CbAction_SelectedIndexChanged;
         BtnDelete.Click += BtnDelete_Click;
@@ -106,16 +106,16 @@ public partial class HotKeyProfileControl : UserControl
     private void CbHandled_CheckedChanged(object _, RoutedEventArgs __) => _profile.IsHandled = CbHandled.IsChecked ?? true;
     private void CbOpenAsTab_CheckedChanged(object _, RoutedEventArgs __) => _profile.IsAsTab = CbOpenAsTab.IsChecked ?? true;
     private void BtnDelete_Click(object _, RoutedEventArgs __) => _removeAction?.Invoke(_profile);
-    private void TxtHotKeys_KeyDown(object sender, System.Windows.Input.KeyboardEventArgs e) => e.Handled = true;
-    private void TxtHotKeys_Enter(object _, RoutedEventArgs __) => InitializeKeybindingHooks();
+    private void TxtHotKey_KeyDown(object sender, System.Windows.Input.KeyboardEventArgs e) => e.Handled = true;
+    private void TxtHotKey_Enter(object _, RoutedEventArgs __) => InitializeKeybindingHooks();
 
-    private void TxtHotKeys_Leave(object _, RoutedEventArgs __)
+    private void TxtHotKey_Leave(object _, RoutedEventArgs __)
     {
         DisposeKeybindingHooks();
 
         // If the name is empty, set it to the hotkey.
         if (string.IsNullOrWhiteSpace(TxtName.Text))
-            TxtName.Text = TxtHotKeys.Text;
+            TxtName.Text = TxtHotKey.Text;
     }
 
     private void LowLevelHook_Down(object? _, KeyboardEventArgs e)
@@ -123,7 +123,7 @@ public partial class HotKeyProfileControl : UserControl
         // Backspace removes the hotkey.
         if (e.Keys.Are(Key.Back))
         {
-            Dispatcher.Invoke(() => TxtHotKeys.Text = string.Empty);
+            Dispatcher.Invoke(() => TxtHotKey.Text = string.Empty);
             _profile.HotKeys = null;
             return;
         }
@@ -170,7 +170,7 @@ public partial class HotKeyProfileControl : UserControl
         _profile.IsMouse = isMouse;
         _profile.IsDoubleClick = isDoubleClick;
 
-        Dispatcher.Invoke(() => TxtHotKeys.Text = keys.HotKeysToString(isDoubleClick));
+        Dispatcher.Invoke(() => TxtHotKey.Text = keys.HotKeysToString(isDoubleClick));
     }
 
     private void MoveFocus(System.Windows.Input.FocusNavigationDirection? direction)
@@ -217,9 +217,9 @@ public partial class HotKeyProfileControl : UserControl
     {
         return Dispatcher.Invoke(() =>
         {
-            var mousePos = System.Windows.Input.Mouse.GetPosition(TxtHotKeys);
-            return mousePos.X >= 0 && mousePos.X <= TxtHotKeys.ActualWidth &&
-                   mousePos.Y >= 0 && mousePos.Y <= TxtHotKeys.ActualHeight;
+            var mousePos = System.Windows.Input.Mouse.GetPosition(TxtHotKey);
+            return mousePos.X >= 0 && mousePos.X <= TxtHotKey.ActualWidth &&
+                   mousePos.Y >= 0 && mousePos.Y <= TxtHotKey.ActualHeight;
         });
     }
 
@@ -259,7 +259,7 @@ public partial class HotKeyProfileControl : UserControl
         // Disable all controls if cbEnabled is unchecked, except for cbEnabled and btnCollapse.
         ExpandedPanel.IsEnabled = isEnabled;
         TxtName.IsEnabled = isEnabled;
-        TxtHotKeys.IsEnabled = isEnabled;
+        TxtHotKey.IsEnabled = isEnabled;
         CbScope.IsEnabled = isEnabled;
         CbAction.IsEnabled = isEnabled;
         TxtPath.IsEnabled = isEnabled && _profile.Action == HotKeyAction.Open;

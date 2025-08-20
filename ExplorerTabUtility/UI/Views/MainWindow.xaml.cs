@@ -156,9 +156,24 @@ public partial class MainWindow : Window
 
     private void BtnSave_Click(object? _, RoutedEventArgs __)
     {
-        _profileManager.SaveProfiles();
-        _notifyIconManager.UpdateMenuItems();
-        UpdateTrayIconVisibility(false);
+        foreach (var item in LbProfiles.Items)
+        {
+            if (item is HotKeyProfile profile)
+            {
+                var container = (ListBoxItem)LbProfiles.ItemContainerGenerator.ContainerFromItem(profile);
+                if (container != null)
+                {
+                    var hotkeyControl = FindVisualChild<HotKeyProfileControl>(container);
+                    if (hotkeyControl != null)
+                    {
+                        // Manually update the binding source
+                        var hotkeyBinding = hotkeyControl.TxtHotKey.GetBindingExpression(TextBox.TextProperty);
+                        hotkeyBinding?.UpdateSource();
+                    }
+                }
+            }
+        }
+        SettingsManager.Save();
     }
 
     private void CbAutoSaveProfiles_CheckedChanged(object? _, RoutedEventArgs __)
@@ -220,7 +235,7 @@ public partial class MainWindow : Window
         foreach (var child in ProfilesPanel.Children)
         {
             if (child is not HotKeyProfileControl control) continue;
-            if (!control.TxtHotKeys.IsFocused) continue;
+            if (!control.TxtHotKey.IsFocused) continue;
 
             control.TxtName.Focus();
             break;
