@@ -34,6 +34,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get Version from csproj
+        if: github.ref_type != 'tag'
+        id: version
+        shell: pwsh
+        run: |
+          $csprojPath = "${{ env.PROJECT_NAME }}/${{ env.PROJECT_NAME }}.csproj"
+          $version = [xml](Get-Content $csprojPath) | Select-Xml -XPath "//PropertyGroup/Version" | Select-Object -ExpandProperty Node | Select-Object -ExpandProperty InnerText
+          echo "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
       - name: Setup MSBuild Environments
         uses: microsoft/setup-msbuild@v2
         with:
@@ -74,7 +83,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.zip_artifacts.outputs.zipName }}
+          name: artifact-${{ matrix.arch }}-${{ matrix.framework }}
           path: ${{ steps.zip_artifacts.outputs.zipName }}
 
   build-installer:
