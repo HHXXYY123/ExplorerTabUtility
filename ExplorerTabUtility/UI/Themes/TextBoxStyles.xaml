@@ -206,4 +206,21 @@
         </Setter>
     </Style>
 
+    <Style x:Key="PathTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource CustomTextBoxStyle}">
+        <Setter Property="ContextMenu" Value="{StaticResource TextBoxCustomContextMenu}" />
+    </Style>
+    
+    <Style x:Key="HotkeyTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource CustomTextBoxStyle}">
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu>
+                    <MenuItem Header="{x:Static p:Strings.Menu_Clear}" Command="{Binding PlacementTarget.DataContext.ClearHotKeyCommand, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
