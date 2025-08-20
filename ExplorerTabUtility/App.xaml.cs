@@ -3,6 +3,7 @@ using System.Threading;
 using System.Windows.Controls;
 using ExplorerTabUtility.UI.Views;
 using ExplorerTabUtility.Helpers;
+using ExplorerTabUtility.Managers;
 
 namespace ExplorerTabUtility;
 
@@ -13,13 +14,14 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
         _mutex = new Mutex(true, Constants.MutexId, out var createdNew);
 
         if (createdNew)
         {
             base.OnStartup(e);
             SetupTooltipBehavior();
-
+            _ = new HookManager();
             _ = new MainWindow();
             return;
         }
