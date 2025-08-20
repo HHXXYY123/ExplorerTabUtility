@@ -10,6 +10,7 @@ using ExplorerTabUtility.Helpers;
 using ExplorerTabUtility.Models;
 using ExplorerTabUtility.UI.Views.Controls;
 using ExplorerTabUtility.Resources;
+using System.Windows.Controls;
 
 namespace ExplorerTabUtility.UI.Views;
 
@@ -156,24 +157,9 @@ public partial class MainWindow : Window
 
     private void BtnSave_Click(object? _, RoutedEventArgs __)
     {
-        foreach (var item in LbProfiles.Items)
-        {
-            if (item is HotKeyProfile profile)
-            {
-                var container = (ListBoxItem)LbProfiles.ItemContainerGenerator.ContainerFromItem(profile);
-                if (container != null)
-                {
-                    var hotkeyControl = FindVisualChild<HotKeyProfileControl>(container);
-                    if (hotkeyControl != null)
-                    {
-                        // Manually update the binding source
-                        var hotkeyBinding = hotkeyControl.TxtHotKey.GetBindingExpression(TextBox.TextProperty);
-                        hotkeyBinding?.UpdateSource();
-                    }
-                }
-            }
-        }
-        SettingsManager.Save();
+        _profileManager.SaveProfiles();
+        _notifyIconManager.UpdateMenuItems();
+        UpdateTrayIconVisibility(false);
     }
 
     private void CbAutoSaveProfiles_CheckedChanged(object? _, RoutedEventArgs __)
