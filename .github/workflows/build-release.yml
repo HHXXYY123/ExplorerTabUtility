@@ -53,8 +53,7 @@ jobs:
       - name: Zip Artifacts
         id: zip_artifacts
         run: |
-          $frameworkName = if ("${{ matrix.framework }}" -eq "net9.0-windows") { "Net9.0_FrameworkDependent" } else { "NetFW4.8.1" }
-          $zipName = "${{ env.PROJECT_NAME }}_${{ env.VERSION }}_${{ matrix.arch }}_${frameworkName}.zip"
+          $zipName = "${{ env.PROJECT_NAME }}_${{ env.VERSION }}_${{ matrix.arch }}.zip"
           
           # Create a temporary directory with PROJECT_NAME as the root
           $tempDir = "temp-$(New-Guid)"
